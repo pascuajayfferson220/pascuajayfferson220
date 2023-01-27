@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPWEBTECH</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            background: url("homeBacks.jpg");
+        }
+        .login{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            background: white;
+            border-radius: 30px 0 30px 0;
+            border: 1px solid chocolate;
+        }
+        .login h1{
+            text-align: center;
+            padding: 0 0 20px 0;
+            border-bottom: 1px solid chocolate;
+            color: chocolate;
+        }
+        .login form{
+            padding: 0 40px;
+            box-sizing: border-box;
+
+        }
+        form .txt_field{
+            position: relative;
+            border: 2px solid #C19A6B;
+            border-radius: 15px 5px 15px 5px;
+            margin: 30px 0;
+            outline: none;
+        }
+        form .txt_field:hover{
+            border: 2px solid #DAA06D;
+        }
+        .txt_field input{
+            width: 100%;
+            padding:  0 5px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            background: none;
+            outline: none;
+        }
+        .txt_field label{
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            color:black;
+            font-weight: bold;
+            transform: translateY(-50%);
+            font-size: 16px;
+            pointer-events: none;
+            transition: .5s;
+        }
+        
+        .txt_field input:focus ~ label,
+        .txt_field input:valid ~ label{
+            top: -10px;
+            color:#DAA06D;
+        }
+        
+        input[type="button"]{
+            width: 100%;
+            height: 50px;
+            border: 1px solid #C19A6B;
+            background: white;
+            font-size: 18px;
+            color:black;
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+        input[type="button"]:hover{
+            border-color: #C19A6B;
+            transition: .5s;
+            color: black;
+            border-radius: 20px 0 20px 0;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="login">
+        <h1>LOGIN</h1>
+        <form name="myForm" method="post" >
+            <div class="txt_field">
+                <input type="text" name="userName" id="username" required/>
+                <span></span>
+                <label>Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="password" id="password" required/>
+                <span></span>
+                <label>Password</label>
+            </div>
+            <input type="button" name="log" id="logButton" value="Login" onclick="myFunction()">
+        </form>
+    </div>
+    <script>
+        function myFunction(){
+            var user = document.forms["myForm"]["userName"].value;
+            var pass = document.forms["myForm"]["password"].value;
+            if(user=="admin" && pass=="admin123"){
+                window.location.assign("main.html");
+                alert("Welcome Back ADMIN");
+                return false;
+            }else{
+                alert("Invalid UserName or Password");
+                return;
+            }
+        }
+    </script>
+</body>
+</html>
