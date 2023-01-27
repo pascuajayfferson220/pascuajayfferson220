@@ -581,6 +581,37 @@ section{
         grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
     }
 }
+@media screen and (max-width:1280px){
+    #home .hCon{
+        padding-top: 60px;
+    }
+    #home  .linkA .conC{
+        margin-left: 120px;
+    }
+    #home h4{
+        
+        margin-top: 20px;
+        
+    }
+    #info .box .contBox{
+        margin-top: 20px;
+        margin-left: 20px;
+        grid-template-columns: repeat(auto-fit,minmax(400px, 1fr));
+    }
+    .booksC {
+        grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+        width: 97vw;
+        height:85vh;
+
+    }
+    .bItem {
+        margin-bottom: 0;
+
+        margin-left: 25px;
+        margin-top: 0;
+    }
+    
+}
 @media screen and (max-width:1024px){
     
     i {
